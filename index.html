@@ -9,18 +9,18 @@
         <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 
         <style>
-            body{background-color: lightcyan; padding: 0; margin: 0; max-width: 100%; overflow-x: hidden; font-family: "Lucida Console", monospace;}
-            .body2{margin-left: 15vw; margin-right: 15vw; background-color: white; height: 100%; margin-bottom: 10vh;}
-            .navbar-outer{ width: 100%; height: 4vh; background-color: dodgerblue; padding: 1%; padding-left: 2%; padding-right: 2%; margin: 0; position: fixed; top: 0; overflow-x: hidden;}
+            body{background-image: linear-gradient(to bottom right, black, rgb(49, 0, 82), whitesmoke, orange ); /*background-color: lightcyan;*/ padding: 0; margin: 0; max-width: 100%; overflow-x: hidden; font-family: "Sans-serif", Helvetica;}
+            .body2{margin-left: 15vw; margin-right: 15vw; background-color: white; margin-bottom: 10vh; border-radius: 5px;}
+            .navbar-outer{ width: 100%; height: 4vh; background-color: rgb(5, 18, 59); padding: 1%; padding-left: 2%; padding-right: 2%; margin: 0; position: fixed; top: 0; overflow-x: hidden;}
             .inner-items{display: flex;  width: 100%; margin-right: 0; padding: 0; overflow-x: hidden;}
             .wrap{position:relative; width:100%; overflow:hidden;}
             .inner-menu{display: flex; width: 40vw; height: 100%;}
             .inner-menu > img {height: 5vh; width: 3vw;} 
             .nav-button{text-align: center; border: 0; background-color: transparent; color: black; text-decoration: none; font-size: 1.6em; padding: 1%; padding-left: 10%; padding-right: 10%; color: whitesmoke;} 
             .nav-button:hover{background-image: linear-gradient(dodgerblue, dodgerblue, dodgerblue, rgb(90, 173, 224)); font-weight: bold; transition-duration: 0.5s;}
-            .contact-button{text-decoration: None;  border: 2px solid whitesmoke; color: whitesmoke; font-size: 1.1em; padding: 6px;}
+            .contact-button{text-decoration: None;  border: 2px solid whitesmoke; color: whitesmoke; font-size: 1.1em; padding: 6px; border-radius: 5px;}
             .contact-button:hover{background-color: whitesmoke; color: dodgerblue; font-weight: bold; transition-duration: 0.5s;}
-            .contact-button2{background-color: dodgerblue; color: whitesmoke; text-decoration: None; font-size: 1.1em; padding: 6px;}
+            .contact-button2{background-color: dodgerblue; color: whitesmoke; text-decoration: None; font-size: 1.1em; padding: 8px; border-radius: 5px;}
             .contact-button2:hover{ border: 2px solid dodgerblue; background-color:whitesmoke; color: dodgerblue;  font-weight: bold; transition-duration: 0.5s;}
             .container{display: flex; justify-content: center; justify-items: center; padding-top: 3vh; padding-bottom: 3vh; padding-left: 2vw; padding-right: 2vw; max-width: 100%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);} 
             .profile{display: flex; justify-content: center; width: 100%; /*border: 1px solid black; padding-top: 3vh; padding-bottom: 3vh; border-radius: 15px;*/}
@@ -32,6 +32,9 @@
             label{font-size: 1.5em; margin-bottom: 1vh;}
             input{width: 100%; height: 4vh; margin-bottom: 2vh;}
             .about{display: flex; justify-content: center;}
+            form > textarea{width: 100%; height: 10vh; margin-bottom: 2vh;}
+            form > button{background-color: rgb(238, 138, 24); color: whitesmoke; text-decoration: None; font-size: 1.1em; padding: 8px; padding-left: 12px; padding-right: 12px; border-radius: 5px;}
+            form > button:hover{ cursor: pointer; border: 2px solid rgb(238, 138, 24); background-color:whitesmoke; color: rgb(238, 138, 24);  font-weight: bold; transition-duration: 0.5s;}
         </style>
 
     </head>
@@ -98,7 +101,10 @@
                         <label for="fname">Name:</label><br>
                         <input type="text" id="fname" name="name"><br>
                         <label for="lname">Email-ID:</label><br>
-                        <input type="email" id="lname" name="main">
+                        <input type="email" id="lname" name="email">
+                        <label for="lname">Message:</label><br>
+                        <textarea type="text" id="message" name="message"></textarea>
+                        <button type="submit" id="submit" onclick="fetch()" >Submit</button>
                     </form>
                 </div>
             </div>
@@ -106,4 +112,7 @@
         </div>
 
     </body>
+    <script>
+        function fetch():AbortController
+    </script>
 </html>
