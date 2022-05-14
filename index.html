@@ -11,7 +11,7 @@
         <style>
             body{background-image: linear-gradient(to bottom right, black, rgb(49, 0, 82), whitesmoke, orange ); /*background-color: lightcyan;*/ padding: 0; margin: 0; max-width: 100%; overflow-x: hidden; font-family: "Sans-serif", Helvetica;}
             .body2{margin-left: 15vw; margin-right: 15vw; background-color: white; margin-bottom: 10vh; border-radius: 5px;}
-            .navbar-outer{ width: 100%; height: 4vh; background-color: rgb(5, 18, 59); padding: 1%; padding-left: 2%; padding-right: 2%; margin: 0; position: fixed; top: 0; overflow-x: hidden;}
+            .navbar-outer{ width: 100%; height: 4vh; background-color: rgb(3, 114, 86); padding: 1%; padding-left: 2%; padding-right: 2%; margin: 0; position: fixed; top: 0; overflow-x: hidden;}
             .inner-items{display: flex;  width: 100%; margin-right: 0; padding: 0; overflow-x: hidden;}
             .wrap{position:relative; width:100%; overflow:hidden;}
             .inner-menu{display: flex; width: 40vw; height: 100%;}
@@ -35,11 +35,71 @@
             form > textarea{width: 100%; height: 10vh; margin-bottom: 2vh;}
             form > button{background-color: rgb(238, 138, 24); color: whitesmoke; text-decoration: None; font-size: 1.1em; padding: 8px; padding-left: 12px; padding-right: 12px; border-radius: 5px;}
             form > button:hover{ cursor: pointer; border: 2px solid rgb(238, 138, 24); background-color:whitesmoke; color: rgb(238, 138, 24);  font-weight: bold; transition-duration: 0.5s;}
+            .thankyou{display: flex; padding: 10%;  width: 100%; justify-content: center; align-items: center; background-color: rgb(23, 19, 41);}
+            .thankyou > button{background-color: rgb(238, 138, 24); color: whitesmoke; text-decoration: None; font-size: 1.8em; padding: 10px; padding-left: 18px; padding-right: 18px; border-radius: 10px;}
+            /* .circle-ripple {background-color: #35ffc3; width: 1em; height: 1em; border-radius: 50%; animation: ripple 0.7s linear infinite;}
+            @keyframes ripple {
+                0% {box-shadow: 0 0 0 0 rgba(#65ff78, 0.3), 0 0 0 1em rgba(#65ff78, 0.3),  0 0 0 3em rgba(#65ff78, 0.3),  0 0 0 5em rgba(#65ff78, 0.3);}
+                100% {box-shadow: 0 0 0 1em rgba(#65ff78, 0.3), 0 0 0 3em rgba(#65ff78, 0.3), 0 0 0 5em rgba(#65ff78, 0.3), 0 0 0 8em rgba(#65ff78, 0);}
+            } */
+            /* Prevent scrollbars to appear when waves go out of bound */
+            /* .sonar-wrapper {position: relative; z-index: 0; overflow: hidden; padding: 10rem 10rem;} */
+
+            /* The circle */
+            /* .sonar-emitter {position: relative; margin: 0 auto; width: 150px; height: 150px; border-radius: 9999px; background-color: HSL(45,100%,50%);} */
+
+            /* the 'wave', same shape and size as its parent */
+            /* .sonar-wave {position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 9999px; background-color: HSL(45,100%,50%); opacity: 0; z-index: -1; pointer-events: none;} */
+
+            /*
+            Animate!
+            NOTE: add browser prefixes where needed.
+            */
+            /* .sonar-wave {animation: sonarWave 3s linear infinite; } */
+
+            /* @keyframes sonarWave {from { opacity: 0.4; } to { transform: scale(3); opacity: 0; }} */
+
+            @keyframes circle {
+            from {
+                transform: scale(0)
+            }
+            to {
+                transform: scale(6)
+            }
+            }
+
+            .circle {
+            margin: 0 auto;
+            width: 50px;
+            height: 50px;
+            border: 3px solid CadetBlue;
+            border-radius: 50%;
+            /* position: absolute;
+            top: 50%;
+            left: 50%; */
+            opacity: 50%;
+            }
+
+            .one {
+            animation: circle 3s infinite linear;
+            }
+
+            .two {
+            animation: circle 2s infinite linear;
+            }
+
+            .three {
+            animation: circle 1s infinite linear;
+            }
+            .four {
+            animation: circle 1s infinite linear;
+            }
+
         </style>
 
     </head>
 
-    <body> 
+    <body onload="hidethankyou()"> 
 
         <div class="navbar-outer" >
             <div class="inner-items">
@@ -93,19 +153,40 @@
                 </div>
             </div>
 
-            <div class="container" id="conteact-section">
+            <div class="container" >
+                <div class="experiences">
+                    <h1>My Experiences !</h1>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="container" id="contact-section">
                 
-                <div class="form">
+                <div class="form" id="form">
                     <h1 style="text-align: center;">Connect WIth Me!</h1>   
                     <form>
                         <label for="fname">Name:</label><br>
-                        <input type="text" id="fname" name="name"><br>
+                        <input type="text" id="name" name="name"><br>
                         <label for="lname">Email-ID:</label><br>
-                        <input type="email" id="lname" name="email">
+                        <input type="email" id="email" name="email">
                         <label for="lname">Message:</label><br>
                         <textarea type="text" id="message" name="message"></textarea>
                         <button type="submit" id="submit" onclick="fetch()" >Submit</button>
                     </form>
+                </div>
+                <div class="thankyou" id="thankyou" style="background-color: black;">    
+                    <div class="circle one"></div>
+                    <div class="circle four"></div>
+                    <button id="thankyou" disabled >Thank You</button>
+                    <div class="circle two"></div>
+                    <div class="circle three"></div>
+                    
+                    <!-- <div class="sonar-wrapper">
+                        <div class="sonar-emitter">
+                        <div class="sonar-wave"></div>
+                      </div>
+                    </div>    -->
+                       
                 </div>
             </div>
 
@@ -113,6 +194,39 @@
 
     </body>
     <script>
-        function fetch():AbortController
+        function hidethankyou(){
+            document.getElementById("thankyou").style.display= "None";
+        }
+        
+        function myTimer() {
+            document.getElementById("form").style.display= "block";
+            document.getElementById("thankyou").style.display= "None";
+        }
+
+        function fetch(){
+            document.getElementById("form").style.display= "None";
+            document.getElementById("thankyou").style.display= "flex";
+            setInterval(myTimer, 3000);
+            // div.style.display= "None";
+            // var name = document.getElementById("name");
+            // var email = document.getElementById("email");
+            // var message = document.getElementById("message");
+
+            // const response = await fetch('http://example.com/movies.json', {
+            //     method: 'POST',
+            //     body: myBody, // string or object
+            //     headers: {
+            //     'Content-Type': 'application/json'
+            //             }
+            //         });
+            // const myJson = await response.json(); //extract JSON from the http response
+            // if (myJson["status"]==="200") {
+            //     document.getElementById("form").style.display= "None";
+            //     setInterval(myTimer, 3000);
+            // }
+                    
+        }
+                
     </script>
+
 </html>
