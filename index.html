@@ -7,21 +7,22 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"> </script>
 
         <style>
             body{background-image: linear-gradient(to bottom right, black, rgb(49, 0, 82), whitesmoke, orange ); /*background-color: lightcyan;*/ padding: 0; margin: 0; max-width: 100%; overflow-x: hidden; font-family: "Sans-serif", Helvetica;}
             .body2{margin-left: 15vw; margin-right: 15vw; background-color: white; margin-bottom: 10vh; border-radius: 5px;}
-            .navbar-outer{ width: 100%; height: 4vh; background-color: rgb(3, 75, 57); padding: 1%; padding-left: 2%; padding-right: 2%; margin: 0; position: fixed; top: 0; overflow-x: hidden;}
+            .navbar-outer{ opacity: 100; width: 100%; height: 4vh; background-color: rgb(5, 196, 139); padding: 1%; padding-left: 2%; padding-right: 2%; margin: 0; position: fixed; top: 0; overflow-x: hidden;}
             .inner-items{display: flex;  width: 100%; margin-right: 0; padding: 0; overflow-x: hidden;}
             .wrap{position:relative; width:100%; overflow:hidden;}
             .inner-menu{display: flex; width: 40vw; height: 100%;}
-            .inner-menu > img {height: 5vh; width: 3vw;} 
+            .inner-menu > img {height: 4vh; width: 2.5vw;} 
             .nav-button{text-align: center; border: 0; background-color: transparent; color: black; text-decoration: none; font-size: 1.6em; padding: 1%; padding-left: 10%; padding-right: 10%; color: whitesmoke;} 
-            .nav-button:hover{background-image: linear-gradient(dodgerblue, dodgerblue, dodgerblue, rgb(90, 173, 224)); font-weight: bold; transition-duration: 0.5s;}
+            .nav-button:hover{background-image: linear-gradient(rgb(3, 75, 57), rgb(3, 75, 57), rgb(3, 75, 57), rgb(4, 85, 65)); font-weight: bold; transition-duration: 0.2s;}
             .contact-button{text-decoration: None;  border: 2px solid whitesmoke; color: whitesmoke; font-size: 1.1em; padding: 6px; border-radius: 5px;}
-            .contact-button:hover{background-color: whitesmoke; color: dodgerblue; font-weight: bold; transition-duration: 0.5s;}
+            .contact-button:hover{cursor: pointer; background-color: whitesmoke; color: dodgerblue; font-weight: bold; transition-duration: 0.5s;}
             .contact-button2{background-color: dodgerblue; color: whitesmoke; text-decoration: None; font-size: 1.1em; padding: 8px; border-radius: 5px;}
-            .contact-button2:hover{ border: 2px solid dodgerblue; background-color:whitesmoke; color: dodgerblue;  font-weight: bold; transition-duration: 0.5s;}
+            .contact-button2:hover{cursor: pointer; border: 2px solid dodgerblue; background-color:whitesmoke; color: dodgerblue;  font-weight: bold; transition-duration: 0.3s;}
             .container{display: flex; justify-content: center; justify-items: center; padding-top: 3vh; padding-bottom: 3vh; padding-left: 2vw; padding-right: 2vw; max-width: 100%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);} 
             .profile{display: flex; justify-content: center; width: 100%; /*border: 1px solid black; padding-top: 3vh; padding-bottom: 3vh; border-radius: 15px;*/}
             .profile-picture{width: 50%; height: 40%; display: flex; }
@@ -32,11 +33,11 @@
             label{font-size: 1.5em; margin-bottom: 1vh;}
             input{width: 100%; height: 4vh; margin-bottom: 2vh;}
             .about{display: flex; justify-content: center;}
-            form > textarea{width: 100%; height: 10vh; margin-bottom: 2vh;}
-            form > button{background-color: rgb(238, 138, 24); color: whitesmoke; text-decoration: None; font-size: 1.1em; padding: 8px; padding-left: 12px; padding-right: 12px; border-radius: 5px;}
-            form > button:hover{ cursor: pointer; border: 2px solid rgb(238, 138, 24); background-color:whitesmoke; color: rgb(238, 138, 24);  font-weight: bold; transition-duration: 0.5s;}
+            form > textarea{max-width: 100%; min-width: 100%; min-height: 4vh; height: 10vh; margin-bottom: 2vh;}
+            .form > button{background-color: rgb(238, 138, 24); color: whitesmoke; text-decoration: None; font-size: 1.1em; padding: 8px; padding-left: 12px; padding-right: 12px; border-radius: 5px;}
+            .form > button:hover{ cursor: pointer; border: 2px solid rgb(238, 138, 24); background-color:whitesmoke; color: rgb(238, 138, 24);  font-weight: bold; transition-duration: 0.3s;}
             .thankyou{display: flex; padding: 10%;  width: 100%; justify-content: center; align-items: center; background-color: rgb(23, 19, 41);}
-            .thankyou > button{background-color: rgb(238, 138, 24); color: whitesmoke; text-decoration: None; font-size: 1.8em; padding: 10px; padding-left: 18px; padding-right: 18px; border-radius: 10px;}
+            .thankyou > button{z-index: 100; background-color: rgb(238, 138, 24); color: whitesmoke; text-decoration: None; font-size: 1.8em; padding: 10px; padding-left: 18px; padding-right: 18px; border-radius: 10px;}
             /* .circle-ripple {background-color: #35ffc3; width: 1em; height: 1em; border-radius: 50%; animation: ripple 0.7s linear infinite;}
             @keyframes ripple {
                 0% {box-shadow: 0 0 0 0 rgba(#65ff78, 0.3), 0 0 0 1em rgba(#65ff78, 0.3),  0 0 0 3em rgba(#65ff78, 0.3),  0 0 0 5em rgba(#65ff78, 0.3);}
@@ -59,42 +60,19 @@
 
             /* @keyframes sonarWave {from { opacity: 0.4; } to { transform: scale(3); opacity: 0; }} */
 
-            @keyframes circle {
-            from {
-                transform: scale(0)
-            }
-            to {
-                transform: scale(6)
-            }
-            }
+            @keyframes circle {from {transform: scale(0)} to {transform: scale(6)}}
+            .circle {margin: 0 auto; width: 50px; height: 50px; border: 3px solid CadetBlue; border-radius: 50%; opacity: 50%; }
+            .one {animation: circle 3s infinite linear;}
+            .two {animation: circle 2s infinite linear;}
+            .three {animation: circle 1s infinite linear;}
+            .four {animation: circle 1s infinite linear;}
 
-            .circle {
-            margin: 0 auto;
-            width: 50px;
-            height: 50px;
-            border: 3px solid CadetBlue;
-            border-radius: 50%;
-            /* position: absolute;
-            top: 50%;
-            left: 50%; */
-            opacity: 50%;
-            }
+            .experiences{display: block; justify-content: center; align-items: center; width: 100%; padding-left: 5vw; padding-right: 5vw;}
+            .exp-head{display: flex; justify-content: space-between;}
 
-            .one {
-            animation: circle 3s infinite linear;
-            }
-
-            .two {
-            animation: circle 2s infinite linear;
-            }
-
-            .three {
-            animation: circle 1s infinite linear;
-            }
-            .four {
-            animation: circle 1s infinite linear;
-            }
-
+            .tagcloud {font-family: 'Poppins', sans-serif; font-size: 20px; margin: auto; width: 50%;}
+            .tagcloud--item:hover {color: #2dbb4c; font-weight: bold;}
+            li > p{line-height: 125%;}
         </style>
 
     </head>
@@ -111,7 +89,7 @@
                     <a href="index.com" class="nav-button" >About</a>
                 </div>
                 <div class="inner-menu" style="justify-content: flex-end; padding-right: 2.5%" >
-                    <a class="contact-button"  href="#contact-section">Connect With Me</a>
+                    <a class="contact-button"  onclick="smoothScroll(document.getElementById('contact-section'))">Connect With Me</a>
                 </div>
             </div>
         </div>
@@ -139,7 +117,7 @@
                             </ul>
                             <h3>Write to me now! : </h3>
                             <ul>
-                                <li><a class="contact-button2" href="#contact-section">Connect Now!</a></li>
+                                <li><a class="contact-button2" onclick="smoothScroll(document.getElementById('contact-section'))" >Connect Now!</a></li>
                             </ul>
                         </div>
                     </div>
@@ -147,43 +125,98 @@
             </div>
 
             <div class="container" >
-                <div class="about">
-                    <h1>About me !</h1>
+                <div class="experiences">
+                    <h2>About Me:</h2>
                     <p></p>
                 </div>
             </div>
 
             <div class="container" >
                 <div class="experiences">
-                    <h1>My Experiences !</h1>
-                    <p></p>
+                    <h2 >Work</h2><br>
+                    <h3><b>Sofrware Developer</b></h3>
+                    <p><a target="_blank" href="https://www.linkedin.com/company/arrzi/">Arrzi</a>, <i>India- (April 2022 - Present)</i></p>
+                    <ul>
+                        <li>Creating core algorithims and scalable software solutions</li>
+                        <li>Creating REST APIs using AWS Lambda and Flask framework for a stateless application</li>
+                        <li>Automating functions using AWS cloudwatch events</li>
+                        <li>Optimizing existing functions and database queries</li>
+                    </ul>
+
+                    <h3><b>Technical Team Lead & Full Stack Developer</b></h3>
+                    <p><a target="_blank" href="https://www.linkedin.com/company/cerebroteamofficial/">Cerebro Kids</a>, <i>India- (April 2020 - May 2021)</i></p>
+                    <ul>
+                        <li>Designed, Developed, tested and optimized web portals (Education Portal) and the official website</li>
+                        <li>Designed, Developed and maintained the database</li>
+                        <li>Administering server, Development, testing and Deployment of new features and tools</li>
+                        <li>Created multiple dashboards serving needs of various teams within the organization using PHP as core backend technology</li>
+                        <li>Performed SEO Optimizations for the website</li>
+                        <li>Responsible for front-end and back-end designing, development, testing and deployment of the educational portal (TITAN : main product of the organization) and maintenance and updating official website</li>
+                    </ul>
                 </div>
             </div>
 
             <div class="container" >
                 <div class="experiences">
-                    <h1>Skill set</h1>
+                    <h2>Certificates</h2>
+                    <ul>
+                        <li><a target="_blank" href="https://www.hackerrank.com/certificates/c87d0c243383?utm_medium=email&utm_source=mail_template_1393&utm_campaign=hrc_skills_certificate"><b>Python (Basic) Certificate</b></a>, on Feb 2022.</li>
+                        <li><a target="_blank" href="https://www.hackerrank.com/certificates/53f1f30eb0be"><b>SQL (Intermediate) Certificate</b></a>, on July 2021.</li>
+                        <li><a target="_blank" href="https://www.hackerrank.com/certificates/3017d430dfe3"><b>SQL (Basic) Certificate</b></a>, on July 2021.</li>
+                        <li><a target="_blank" href="https://www.hackerrank.com/certificates/e061c17b36b6"><b>Problem Solving (Basic) Certificate</b></a>, on July 2021.</li>
+                        <li><a target="_blank" href="https://www.udemy.com/certificate/UC-8da5689e-a3b7-4036-9b43-6857b9cc6592/"><b>The Complete Web Developer Course</b></a>, on July 2020.</li>
+                        <li><a target="_blank" href="https://www.udemy.com/certificate/UC-b9e43e3f-9d78-4e5a-ada9-cb0e99221828/"><b>Python Bible Course</b></a>, on April 2020.</li>
+                    </ul>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="container" style="background-color: black;">
+                <div class="experiences">
+                    <h2 style="color: white;">Tools, Technologies and Skill set : </h2>
+                    <span class="content"></span>
                     <p></p>
                 </div>
             </div>
 
             <div class="container" >
+                
                 <div class="experiences">
-                    <h1>Certificates</h1>
-                    <p></p>
+                    <div class="context">
+                        <h2>Live hosted projects</h2><br>
+                        <h3>REST APIs using Flask</h3>
+                        <ul>
+                            <li> <p> <a href="https://first-rest-api-sp.herokuapp.com/"><b>Math API</b></a> : <br> A simple Rest API implementation to get <u>sum</u> , <u>average</u>  and know whether an input is <u>palindrome</u>  or not - <br> Website link : <a href="https://first-rest-api-sp.herokuapp.com/">https://first-rest-api-sp.herokuapp.com/</a> <br> Github repository link : <a href="https://github.com/shubham8patni/rest-api-test1">https://github.com/shubham8patni/rest-api-test1</a></li></p>
+                        </ul>
+                        <ul>
+                            <li><p><a href="https://employee-department-restapi.herokuapp.com/"><b>Employee-department-RESTapi</b></a> : <br> Implementation of REST-API using flask. Can be used to <u>Find all workers and their details fora particualar depatment</u>, <u>Get list of all workers and details fromall departments</u>, <u>add new employee to a department</u> - <br> Website link : <a href="https://employee-department-restapi.herokuapp.com/">https://employee-department-restapi.herokuapp.com/</a> <br> Github repository link : <a href="https://github.com/shubham8patni/employee-department-RESTapi">https://github.com/shubham8patni/employee-department-RESTapi</a></li></p>
+                        </ul>
+                        <br>
+                        <h3>ReactJs Websites</h3>
+                        <ul>
+                            <li> <p> <a href="https://shubham-websol-word-processing.netlify.app/"><b>WebSol</b></a> : <br> Text processing website using ReactJs. Practice of components, states and routing. - <br> Website link : <a href="https://shubham-websol-word-processing.netlify.app/">https://shubham-websol-word-processing.netlify.app/</a> <br> Github repository link : <a href="https://github.com/shubham8patni/WebSol-ReactJs/tree/master">https://github.com/shubham8patni/WebSol-ReactJs/tree/master</a></li></p>
+                        </ul>
+                        <ul>
+                            <li><p><a href="https://shubham-tic-tac-toe.netlify.app/"><b>Tic-Tac-Toe</b></a> : <br> Simple 2 player tic-tac-toe game with access to all the previous moves, utilizing state management - <br> Website link : <a href="https://shubham-tic-tac-toe.netlify.app/">https://shubham-tic-tac-toe.netlify.app/</a> <br> Github repository link : <a href="https://github.com/shubham8patni/tic-tac-toe-ReactJs">https://github.com/shubham8patni/tic-tac-toe-ReactJs</a></li></p>
+                        </ul>
+                        <ul>
+                            <li><p><a href="https://shubham-weather-forecast.netlify.app/"><b>WeatherForecast for Mobile</b></a> : <br> A weather forecast app using open-weather API. Please open in mobile view - <br> Website link : <a href="https://shubham-weather-forecast.netlify.app/">https://shubham-weather-forecast.netlify.app/</a> <br> Github repository link : <a href="https://github.com/shubham8patni/WeatherForecast-ReactJs">https://github.com/shubham8patni/WeatherForecast-ReactJs</a></li></p>
+                        </ul>
+                        <ul>
+                            <li><p><a href="https://shubham-todo-reactjs.netlify.app/"><b>TODO app (Frontend only)</b></a> : <br> A simple app to keep track of your tasks. - <br> Website link : <a href="https://shubham-todo-reactjs.netlify.app/">https://shubham-todo-reactjs.netlify.app/</a> <br> Github repository link : <a href="https://github.com/shubham8patni/TODO-App-ReactJs">https://github.com/shubham8patni/TODO-App-ReactJs</a></li></p>
+                        </ul>
+                        <ul>
+                            <li><p><a href="https://shubham-weather-forecast.netlify.app/"><b>WeatherForecast for Mobile</b></a> : <br> A weather forecast app using open-weather API. Please open in mobile view - <br> Website link : <a href="https://shubham-weather-forecast.netlify.app/">https://shubham-weather-forecast.netlify.app/</a> <br> Github repository link : <a href="https://github.com/shubham8patni/WeatherForecast-ReactJs">https://github.com/shubham8patni/WeatherForecast-ReactJs</a></li></p>
+                        </ul>
+                    </div>
+                    
                 </div>
             </div>
 
             <div class="container" >
                 <div class="experiences">
-                    <h1>Live hosted projects</h1>
-                    <p></p>
-                </div>
-            </div>
-
-            <div class="container" >
-                <div class="experiences">
-                    <h1>Projects</h1>
+                    <h2>Projects</h2>
+                    
                     <p></p>
                 </div>
             </div>
@@ -199,8 +232,9 @@
                         <input type="email" id="email" name="email">
                         <label for="lname">Message:</label><br>
                         <textarea type="text" id="message" name="message"></textarea>
-                        <button type="submit" id="submit" onclick="fetch()" >Submit</button>
+                        
                     </form>
+                    <button id="submit" onclick="fetch()" >Submit</button>
                 </div>
                 <div class="thankyou" id="thankyou" style="background-color: black;">    
                     <div class="circle one"></div>
@@ -254,7 +288,66 @@
             // }
                     
         }
+        
+        window.smoothScroll = function(target) {
+            var scrollContainer = target;
+            do { //find scroll container
+                scrollContainer = scrollContainer.parentNode;
+                if (!scrollContainer) return;
+                scrollContainer.scrollTop += 1;
+            } while (scrollContainer.scrollTop == 0);
+
+            var targetY = 0;
+            do { //find the top of target relatively to the container
+                if (target == scrollContainer) break;
+                targetY += target.offsetTop;
+            } while (target = target.offsetParent);
+
+            scroll = function(c, a, b, i) {
+                i++; if (i > 30) return;
+                c.scrollTop = a + (b - a) / 30 * i;
+                setTimeout(function(){ scroll(c, a, b, i); }, 20);
+            }
+            // start scrolling
+            scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+        }
+
                 
+    </script>
+
+    <script>
+        const myTags = [
+            'JavaScript', 'CSS', 'HTML',
+            'C', 'C++', 'React.js',
+            'Python', 'REST API', 'git',
+            'Flask', 'AWS Lambda','AWS DynamoDB', 'AWS Automation', 'OpenCV',
+            'PHP', 'MySQL', 'ML/DL', 'Appium', 'POSTMAN'
+        ];
+
+        var tagCloud = TagCloud('.content', myTags,{
+
+        // radius in px
+        radius: 250,
+
+        // animation speed
+        // slow, normal, fast
+        maxSpeed: 'fast',
+        initSpeed: 'fast',
+
+        // 0 = top
+        // 90 = left
+        // 135 = right-bottom
+        direction: 135,
+        
+        // interact with cursor move on mouse out
+        keep: true
+        
+        });
+
+        //To change the color of text randomly
+        var colors = ['#34A853', '#FBBC05', '#4285F4', '#7FBC00', 'FFBA01', '01A6F0'];
+        var random_color = colors[Math.floor(Math.random() * colors.length)];
+        document.querySelector('.content').style.color = random_color;
     </script>
 
 </html>
