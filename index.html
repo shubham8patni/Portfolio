@@ -15,11 +15,12 @@
             a:hover{font-weight: bold;}
             .body2{margin-left: 15vw; margin-right: 15vw; background-color: rgb(0, 0, 0); margin-bottom: 10vh; border-radius: 5px; color: white;}
             .navbar-outer{ opacity: 100; width: 100%; height: 4vh; background-color: #54d296; padding: 1%; padding-left: 2%; padding-right: 2%; margin: 0; position: fixed; top: 0; overflow-x: hidden; z-index: 100;} /* background-color: rgb(94, 5, 196)*/
-            .bottom-outer{ opacity: 100; width: 100%; height: 0.3vh; background-color: #54d296; padding: 1%; padding-left: 2%; padding-right: 2%; margin: 0; position: fixed; bottom: 0; overflow-x: hidden; overflow-y: hidden; z-index: 100; color:white;} /* background-color: rgb(94, 5, 196)*/
+            .bottom-outer{ opacity: 100; width: 100%; height: 2vh; background-color: #54d296; padding: 1%; padding-left: 2%; padding-right: 2%; margin: 0; overflow-x: hidden; overflow-y: hidden; z-index: 100; color:white; } /* background-color: rgb(94, 5, 196)*/
+            footer > h4{margin: 0; padding: 0; text-align: center;}
             .inner-items{display: flex;  width: 100%; margin-right: 0; padding: 0; overflow-x: hidden; justify-content: space-around;}
             .wrap{position:relative; width:100%; overflow:hidden;}
             .inner-menu{display: flex; width: 40vw; height: 100%;}
-            .inner-menu > img {height: 4vh; width: 2.5vw;} 
+            .inner-menu > img {height: 40px; width: 40px;} 
             /* .nav-button{text-align: center; border: 0; background-color: transparent; color: black; text-decoration: none; font-size: 1.6em; padding: 1%; padding-left: 10%; padding-right: 10%; color: whitesmoke;} 
             .nav-button:hover{background-image: linear-gradient(rgb(3, 75, 57), rgb(3, 75, 57), rgb(3, 75, 57), rgb(4, 85, 65)); font-weight: bold; transition-duration: 0.2s;} */
             .contact-button{text-decoration: None;  border: 2px solid whitesmoke; color: whitesmoke; font-size: 1.1em; padding: 6px; border-radius: 5px;}
@@ -371,20 +372,21 @@
 
         </div>
 
-        <div class="bottom-outer" >
-            <div class="inner-items">
+        <footer class="bottom-outer" >
+            <h4>made by Shubham Patni (2022)</h4>
+            <!-- <div class="inner-items">
                 <div class="inner-menu">
                     <span> made by Shubham Patni</span>
                 </div>
-                <!-- <div class="inner-menu">
+                <div class="inner-menu">
                     <a href="index.com" class="nav-button" >Home</a>
                     <a href="index.com" class="nav-button" >About</a>
-                </div> -->
+                </div> 
                 <div class="inner-menu" style="justify-content: flex-end; padding-right: 2.5%" >
                     <span>2020</span>
                 </div>
-            </div>
-        </div>
+            </div> -->
+        </footer>
     </body>
     <script>
         function colorname(){
